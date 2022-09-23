@@ -1,0 +1,53 @@
+/* 
+##################################
+        GENERAL
+##################################
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --colordarkblue: #323a45;
+  --colorgrey: #848484;
+}
+
+html {
+  font-size: 62.5%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  max-width: 1440px;
+  margin: 5% auto 0 auto;
+  font-family: "Karla", sans-serif;
+
+  img {
+    max-width: 100%;
+  }
+
+  img:hover {
+    opacity: 0.6;
+    transition: opacity 0.75s;
+  }
+
+  h1 {
+    color: var(--colordarkblue);
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--colordarkblue);
+  }
+
+  .company {
+    color: var(--colorgrey);
+  }
+}
