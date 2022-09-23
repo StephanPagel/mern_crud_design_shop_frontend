@@ -1,13 +1,13 @@
-# fullstack_crud_design_shop_frontend
+# mern_crud_design_shop_frontend
 
 This is a fullstack CRUD (Create, Read, Update, Delete) project in the form of an online shop. The technologies used in the frontend are:
 
 * HTML
-* CSS
+* SCSS
 * Javascript
 * React.js
 
-The project is still under construction. As soon as it is finished, I will provide the deployment link here.
+The project is still under construction...
 
 Many greetings Stephan
 
