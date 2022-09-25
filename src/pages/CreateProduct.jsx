@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import apiLink from "../api";
 
 const CreateProduct = () => {
-
-  const navigator = useNavigate()  
+  const navigator = useNavigate();
 
   const [productName, setProductname] = useState("");
   const [productLink, setProductLink] = useState("");
@@ -13,40 +12,40 @@ const CreateProduct = () => {
   const [description, setDescription] = useState("");
   const [feedback, setFeedback] = useState("");
 
-  function createProduct() {
+  const createProduct = () => {
     if (!productName || !productLink || !company || !price || !description) {
-        //console.log(feedback)
-       return setFeedback("Please fill in all fields.");
-       // Feedback in Konsole ausgeben
+      //console.log(feedback)
+      return setFeedback("Please fill in all fields.");
+      // Feedback in Konsole ausgeben
     }
     fetch(`${apiLink}/products/add`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            ProductName: productName,
-            Company: company,
-            Price: price,
-            ProductLink: productLink,
-        })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ProductName: productName,
+        Company: company,
+        Price: price,
+        ProductLink: productLink,
+      }),
     })
-    .then(res => res.json())
-    .then(newProduct => {
-        console.log(newProduct.id)
-        navigator(`/productdetails/${newProduct.id}`)
-    })
-    .then(() => {
-        setFeedback("Product created successfully.")
-    })
-    .catch((err) => console.log("Error creating product: ",err))
-  }
+      .then((res) => res.json())
+      .then((newProduct) => {
+        console.log(newProduct.id);
+        navigator(`/productdetails/${newProduct.id}`);
+      })
+      .then(() => {
+        setFeedback("Product created successfully.");
+      })
+      .catch((err) => console.log("Error creating product: ", err));
+  };
 
   return (
     <form>
       <h1>ADD A NEW PRODUCT</h1>
 
-      <label htmlFor="productName"></label>
+      <label htmlFor="productName">Product Name</label>
       <input
         type="text"
         name="productName"
@@ -55,7 +54,7 @@ const CreateProduct = () => {
         onChange={(e) => setProductname(e.target.value)}
       />
 
-      <label htmlFor="productLink"></label>
+      <label htmlFor="productLink">Link to Image</label>
       <input
         type="text"
         name="productLink"
@@ -64,7 +63,7 @@ const CreateProduct = () => {
         onChange={(e) => setProductLink(e.target.value)}
       />
 
-      <label htmlFor="company"></label>
+      <label htmlFor="company">Company</label>
       <input
         type="text"
         name="company"
@@ -73,7 +72,7 @@ const CreateProduct = () => {
         onChange={(e) => setCompany(e.target.value)}
       />
 
-      <label htmlFor="price"></label>
+      <label htmlFor="price">Price</label>
       <input
         type="text"
         name="price"
@@ -82,7 +81,7 @@ const CreateProduct = () => {
         onChange={(e) => setPrice(e.target.value)}
       />
 
-      <label htmlFor="description"></label>
+      <label htmlFor="description">Description</label>
       <input
         type="text"
         name="description"
