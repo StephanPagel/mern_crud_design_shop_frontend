@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import apiLink from "../api";
+import EditProduct from "../components/EditProduct";
 import "./ProductDetails.scss";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState([]);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [editProduct, setEditProduct] = useState(false);
   const { id } = useParams();
   const navigator = useNavigate();
 
@@ -28,7 +30,10 @@ const ProductDetails = () => {
     product && (
       <div>
         <div className="btn-container">
-          <button className="btn-edit" to="/editproduct">
+          <button
+            className="btn-edit"
+            onClick={() => setEditProduct(!editProduct)}
+          >
             Edit
           </button>
           <button className="btn-delete" onClick={() => setDeleteConfirm(true)}>
@@ -75,6 +80,12 @@ const ProductDetails = () => {
         </div>
         <div className="btn-container">
           <button className="btn-buy">BUY PRODUCT</button>
+        </div>
+        <div
+          className="edit-form"
+          style={editProduct ? { display: "block" } : { display: "none" }}
+        >
+          <EditProduct product={product} />
         </div>
       </div>
     )
