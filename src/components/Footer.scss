@@ -1,4 +1,9 @@
 footer {
   text-align: center;
   margin: 10% 0 2% 0;
+
+  h1 a {
+    color: var(--colordarkblue);
+    text-decoration: none;
+  }
 }

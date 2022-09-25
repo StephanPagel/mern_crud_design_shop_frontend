@@ -18,8 +18,8 @@ function App() {
           <Route path="/createproduct" element={<CreateProduct />} />
           <Route path="/editproduct" element={<EditProduct />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   );
 }
