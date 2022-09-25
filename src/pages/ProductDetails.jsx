@@ -28,8 +28,12 @@ const ProductDetails = () => {
     product && (
       <div>
         <div className="btn-container">
-          <button to="/editproduct">Edit</button>
-          <button onClick={deleteProduct}>Delete</button>
+          <button className="btn-edit" to="/editproduct">
+            Edit
+          </button>
+          <button className="btn-delete" onClick={deleteProduct}>
+            Delete
+          </button>
         </div>
         <div className="product-item">
           <img src={product.ProductLink} alt="product" />

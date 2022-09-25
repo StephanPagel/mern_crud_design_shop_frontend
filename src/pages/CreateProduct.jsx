@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiLink from "../api";
+import "./CreateProduct.scss";
 
 const CreateProduct = () => {
   const navigator = useNavigate();
@@ -45,52 +46,54 @@ const CreateProduct = () => {
     <form>
       <h1>ADD A NEW PRODUCT</h1>
 
-      <label htmlFor="productName">Product Name</label>
       <input
         type="text"
         name="productName"
         id="productName"
         value={productName}
+        placeholder="Product Name"
         onChange={(e) => setProductname(e.target.value)}
       />
 
-      <label htmlFor="productLink">Link to Image</label>
       <input
         type="text"
         name="productLink"
         id="productLink"
         value={productLink}
+        placeholder="URL Image"
         onChange={(e) => setProductLink(e.target.value)}
       />
 
-      <label htmlFor="company">Company</label>
       <input
         type="text"
         name="company"
         id="company"
         value={company}
+        placeholder="Company"
         onChange={(e) => setCompany(e.target.value)}
       />
 
-      <label htmlFor="price">Price</label>
       <input
         type="text"
         name="price"
         id="price"
         value={price}
+        placeholder="Price"
         onChange={(e) => setPrice(e.target.value)}
       />
 
-      <label htmlFor="description">Description</label>
       <input
         type="text"
         name="description"
         id="description"
         value={description}
+        placeholder="Description"
         onChange={(e) => setDescription(e.target.value)}
       />
 
-      <button onClick={createProduct}>ADD PRODUCT</button>
+      <button className="btn-add" onClick={createProduct}>
+        ADD PRODUCT
+      </button>
     </form>
   );
 };
