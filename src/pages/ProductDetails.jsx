@@ -31,25 +31,26 @@ const ProductDetails = () => {
           <button className="btn-edit" to="/editproduct">
             Edit
           </button>
-          {!deleteConfirm && (
-            <button
-              className="btn-delete"
-              onClick={() => setDeleteConfirm(true)}
-            >
-              Delete
-            </button>
-          )}
-
-          {deleteConfirm && (
-            <div className="delete-confirm">
-              <span>Are you sure that you want to delete this product?</span>
-              <div>
-                <button onClick={deleteProduct}>YES</button>
-                <button onClick={() => setDeleteConfirm(false)}>CANCEL</button>
-              </div>
-            </div>
-          )}
+          <button className="btn-delete" onClick={() => setDeleteConfirm(true)}>
+            Delete
+          </button>
         </div>
+
+        <div className={deleteConfirm ? "delete-confirm" : "hidden"}>
+          <span>Are you sure that you want to delete this product?</span>
+          <div className="btn-container">
+            <button className="btn-confirm-yes" onClick={deleteProduct}>
+              YES
+            </button>
+            <button
+              className="btn-confirm-cancel"
+              onClick={() => setDeleteConfirm(false)}
+            >
+              CANCEL
+            </button>
+          </div>
+        </div>
+
         <div className="product-item">
           <img src={product.ProductLink} alt="product" />
           <div className="product-info">

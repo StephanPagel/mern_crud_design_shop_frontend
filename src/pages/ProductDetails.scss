@@ -12,6 +12,50 @@
   color: var(--colorgrey);
 }
 
+.delete-confirm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // width: 50%;
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  span {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 2rem;
+
+    .btn-confirm-yes,
+    .btn-confirm-cancel {
+      width: 10rem;
+      padding: 0.5rem 0;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-confirm-yes {
+      background-color: rgb(112, 172, 112);
+    }
+
+    .btn-confirm-cancel {
+      background-color: rgb(255, 172, 172);
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
 .product-item img {
   width: 100%;
 }
