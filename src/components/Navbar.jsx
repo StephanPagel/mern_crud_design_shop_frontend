@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link to="/">THE DESIGN SHOP</Link>
       </h1>
       <nav>
-        <div>
+        <div className="nav-links">
           <p>Weekly Recommendations</p>
           <p>Contact</p>
           <p>
@@ -16,7 +16,7 @@ const Navbar = () => {
           </p>
         </div>
       </nav>
-      <div>
+      <div className="burger-menu">
         <span></span>
         <span></span>
         <span></span>
